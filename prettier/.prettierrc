@@ -1,0 +1,25 @@
+{
+	"printWidth": 80,
+	"tabWidth": 2,
+	"useTabs": true,
+	"semi": true,
+	"singleQuote": false,
+	"quoteProps": "consistent",
+	"jsxSingleQuote": false,
+	"trailingComma": "es5",
+	"bracketSpacing": true,
+	"bracketSameLine": false,
+	"arrowParens": "always",
+
+	"requirePragma": false,
+	"insertPragma": false,
+
+	"overrides": [
+		{
+			"files": "*.test.js",
+			"options": {
+				"semi": true
+			}
+		}
+	]
+}
