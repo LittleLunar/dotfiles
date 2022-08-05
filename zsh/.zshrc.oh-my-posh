@@ -1,0 +1,86 @@
+
+# Aliasing
+alias ll="exa -la --icons --header --bytes --time-style=long-iso --modified --git"
+alias lt="ll --tree --level=2"
+alias lt3="ll --tree --level=3"
+alias lt4="ll --tree --level=4"
+alias lt5="ll --tree --level=5"
+
+alias ad="git add"
+alias ada="git add ."
+alias com="git commit -m"
+alias puo="git push -u origin"
+alias ch="git checkout"
+alias me="git merge"
+alias pul="git pull"
+alias status="git status"
+alias stash="git stash"
+alias restore="git restore"
+
+
+alias vim="nvim"
+alias rls="exec zsh"
+alias grep="grep --color=auto"
+
+# export PATH
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+
+export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/sqlite/lib/pkgconfig"
+
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig"
+
+export HDF5_DIR="/opt/homebrew/opt/hdf5"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/littlelunar/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/littlelunar/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/littlelunar/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/littlelunar/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+pyenvPATH="$(pyenv root)/shims"
+OpenSSLPATH="/opt/homebrew/opt/openssl@3/bin"
+SQLitePATH="/opt/homebrew/opt/sqlite/bin"
+FlutterPATH="$HOME/flutter/bin"
+#MinicondaPATH="$HOME/miniconda/bin"
+PATH="$PATH:$pyenvPATH:$FlutterPATH:$OpenSSLPATH:$SQLitePATH"
+
+export PATH
+
+# LS_COLORS
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+
+
+
+# zsh-autosuggestions configuration {{{ ----------------------------------------------------------------------------------
+#
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# }}}
+
+# inititalize oh-my-posh with zsh
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/lunardev-3.omp.json)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(rbenv init - zsh)"
