@@ -1,0 +1,9 @@
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+
+# zsh-autosuggestions configuration {{{ ----------------------------------------------------------------------------------
+#
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# }}}
